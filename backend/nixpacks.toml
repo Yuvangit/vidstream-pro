@@ -1,0 +1,9 @@
+# Force Nixpacks to use Python — prevents it from detecting index.html as static site
+[phases.setup]
+nixPkgs = ["python311", "ffmpeg"]
+
+[phases.install]
+cmds = ["pip install -r requirements.txt"]
+
+[start]
+cmd = "gunicorn wsgi:application --bind 0.0.0.0:$PORT --workers 2 --timeout 120"

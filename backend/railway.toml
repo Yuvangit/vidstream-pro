@@ -1,0 +1,14 @@
+[build]
+builder = "NIXPACKS"
+
+# Tell Railway this is Python — not a static site
+# This overrides auto-detection which may pick up index.html
+[build.buildCommand]
+value = "pip install -r requirements.txt"
+
+[deploy]
+startCommand = "gunicorn wsgi:application --bind 0.0.0.0:$PORT --workers 2 --timeout 120"
+healthcheckPath = "/api/health"
+healthcheckTimeout = 60
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
