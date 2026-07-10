@@ -1,0 +1,14 @@
+{
+  "name": "vidstream-pro",
+  "version": "1.0.0",
+  "description": "VidStream Pro - Download Videos & Music from 500+ Platforms",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Static site - no build required'"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.14"
+  },
+  "devDependencies": {},
+  "private": true
+}
